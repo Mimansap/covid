@@ -9,4 +9,10 @@ dataset = pd.read_csv('run_results.csv')
 dataset
 df = dataset.replace(np.nan,0)
 df
+import pandas as pds   
+# After importing the required data 
+print(df) 
+from sklearn.preprocessing import LabelEncoder  
+le = LabelEncoder()  
+df['__Countries']= le.fit_transform(df['__Countries'])
 df.to_csv('covid.csv')
